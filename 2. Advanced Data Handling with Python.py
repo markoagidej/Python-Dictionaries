@@ -42,7 +42,11 @@ def view_status(hotel):
 
 products = {
     "1": {"name": "Laptop", "category": "Electronics", "price": 800},
-    "2": {"name": "Shirt", "category": "Clothing", "price": 20}
+    "2": {"name": "Shirt", "category": "Clothing", "price": 20},
+    "3": {"name": "Shirt", "category": "Clothing", "price": 20},
+    "4": {"name": "laptop", "category": "Electronics", "price": 400},
+    "5": {"name": "SHIRT", "category": "Clothing", "price": 20},
+    "6": {"name": "Pants", "category": "Clothing", "price": 20}
 }
 
 def search_product(product_search):
@@ -51,7 +55,10 @@ def search_product(product_search):
         if product["name"].lower() == product_search.lower():
             matching_products.append(product)
 
+    if matching_products:
+        for product in matching_products:
+            print(product)
     else:
-        print(f"Could not find {product_search}.")
+        print("Could not find a match!")
 
 search_product(input("What product are you searching for? "))
